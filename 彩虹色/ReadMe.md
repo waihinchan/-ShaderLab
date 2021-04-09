@@ -63,3 +63,7 @@
 [视频](https://vimeo.com/534714149)
 
 差不多应该是这个样子。。
+
+关于在URP中获取LightDirection的看这里：https://blogs.unity3d.com/cn/2019/07/31/custom-lighting-in-shader-graph-expanding-your-graphs-in-2019/ （未测试）
+我传了一个HDRP的LightDirection的自定义节点。同时把Zucconi的彩虹做法放在节点里面了，d和u都可以根据情况作为输入。甚至可以把d也可以拿去采样或者做一些计算而非给一个常量。
+还有很多做的不够完善的地方，以后有机会把HDRP官方的珠光色实现方法补一下。。
