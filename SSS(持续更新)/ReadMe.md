@@ -23,7 +23,7 @@ SSS皮肤预积分LUT纹理生成参考这里的数学模型解释有了一个�
 ```csharp
 float x = Mathf.Acos(NdotV); 
 float theta = 0; 
-float Getp'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) );
+float Get_p'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) );
 ```
 
 这个theta_x 就是上面公式的x
@@ -83,7 +83,7 @@ Vector3 Scatter( float r){
 ```csharp
 
 float x = Mathf.Acos(NdotV); //光和法线的夹角
-float Getp'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) ); //任意一点与法线的夹角
+float Get_p'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) ); //任意一点与法线的夹角
 float r = 0; //曲率
 float d = 2r * sin(theta/2); //点p' 和 P 的距离
 float p'_Scatter = Scatter(d) * Getp'_Light ;
@@ -97,7 +97,7 @@ float p'_Scatter = Scatter(d) * Getp'_Light ;
 
 上面的教程中给出了一个推导的过程。大体来说的意思就是根据能量守恒定律，P在这个半圆上所接收到的总和应该是1， 而当我们简单的用q(x)来代表某一点p’ 对 P的散射光贡献度是错误的，因为还要积分考虑半圆上所有的点的情况。 然后就是一通推导。 得出上面的这么一个公式。 
 
-根据公式来看，分子中的cos（theta + x） 正式代码中求的 ”Getp'_Light“， 而R(2r * sin(x/2)) 则是我们的diffuseprofile的q(x)， 也就是Scatter(d)。 所以公式的分子应为所有点p' 的 ”p'_Scatter“累加。
+根据公式来看，分子中的cos（theta + x） 正式代码中求的 ”Get_p'_Light“， 而R(2r * sin(x/2)) 则是我们的diffuseprofile的q(x)， 也就是Scatter(d)。 所以公式的分子应为所有点p' 的 ”p'_Scatter“累加。
 
 而分母则为Scatter(d)；
 
@@ -106,7 +106,7 @@ float p'_Scatter = Scatter(d) * Getp'_Light ;
 ```csharp
 
 float x = Mathf.Acos(NdotV); //反三角函数求光和法线的夹角
-float Getp'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) ); //任意一点与法线的夹角
+float Get_p'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) ); //任意一点与法线的夹角
 float r = 0; //曲率
 float d = 2r * sin(theta/2); //点p' 和 P 的距离
 float p'_weight = Scatter(d);
