@@ -28,7 +28,7 @@ float Getp'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) );
 
 这个theta_x 就是上面公式的x
 
-这个theta指的是Op'与法线N构成的夹角。后面我们可以写一个迭代把theta从 0 到 PI之间迭代，就可以求出所有的点。
+这个theta指的是Op'与法线N构成的夹角。后面我们可以写一个迭代把theta从 -PI 到 PI之间迭代，就可以求出所有的点。
 
 ---
 
