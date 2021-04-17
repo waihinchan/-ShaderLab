@@ -171,3 +171,6 @@ halfPI
 ![SSS%20282724a6f30943cbad597e33be214786/SSS_LUT.png](SSS%20282724a6f30943cbad597e33be214786/SSS_LUT.png)
 
 fullPI
+
+
+最后还有一些遗留的问题点。有一些教程中指出r的范围应该是2-16，而且这里用于计算distance的r其实这个半圆的半径。因为我对于曲率暂时还不是很了解，所以暂时不清楚这里为什么把Skinradius作为参数传递到用于计算distance的r之中。
