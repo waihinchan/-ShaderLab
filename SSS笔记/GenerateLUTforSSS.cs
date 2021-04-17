@@ -58,7 +58,7 @@ public class GenerateLUTforSSS : ScriptableWizard
             for (int j = 0; j < height; j++) //r
             {
                 float x = Mathf.Lerp(-1, 1, i/(float) width); 
-                float y =   height/(j+0.0001f)  ; //这里曲率的取值范围问题还是有些疑惑，但是按照0-1的取值范围是对的。
+                float y =   height/(j+0.0001f)  ; //这里曲率的取值范围问题还是有些疑惑，但是按照0-1的取值范围是对的。同事可以考虑一下是否用remap来映射0-1.
 
                 Vector3 result  = GetDiffuse(x,y);
                 SSS_LUT.SetPixel(i, j, new Color(result.x,result.y,result.z,1f));
