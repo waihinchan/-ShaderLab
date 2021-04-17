@@ -55,7 +55,7 @@ fixed cuv = saturate(_CurveFactor * (length(fwidth(worldNormal)) / length(fwidth
 
 也可以先烘焙好一个曲率贴图来做采样。因为我还没有到拿这个模型到unity测试的阶段，这里先做个记录。
 
-到目前为止我们确定了我们的参数x，然后把它代入到q(x)里面。
+到目前为止我们确定了我们的参数x=d，然后把它代入到q(x)里面。
 
 ---
 
@@ -75,7 +75,7 @@ Vector3 Scatter( float r){
 }
 ```
 
-这里的r就是我们的曲率，就是上面确定好的参数x。
+
 
 基于以上代码我们就可以求出某一个点p' 对 P的散射光为：
 
