@@ -43,7 +43,7 @@ float Getp'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) );
 
 ```csharp
 float theta = 0; 
-float r = 0;
+float r = 0.5;
 float d = 2r * sin(theta/2);
 ```
 
