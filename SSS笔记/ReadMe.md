@@ -98,7 +98,7 @@ float p'_Scatter = Scatter(d) * Getp'_Light ;
 
 根据公式来看，分子中的cos（theta + x） 正式代码中求的 ”Getp'_Light“， 而R(2r * sin(x/2)) 则是我们的diffuseprofile的q(x)， 也就是Scatter(d)。 所以公式的分子应为所有点p' 的 ”p'_Scatter“累加。
 
-而分母则为Scatter(d)；
+而分母则为Scatter(d)的累加；
 
 所以我们最终得到的某一个点P所受到的光照度结果应该是
 
