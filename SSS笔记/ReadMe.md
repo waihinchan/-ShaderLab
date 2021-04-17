@@ -38,7 +38,6 @@ float Getp'_Light = Mathf.Clamp01( Mathf.Cos(x + theta) );
 
 ![SSS%20282724a6f30943cbad597e33be214786/Untitled%202.png](SSS%20282724a6f30943cbad597e33be214786/Untitled%202.png)
 
-而其中这里的r指这个半圆的半径。x指的还是那个Op‘和N的夹角。
 
 伪代码如下：
 
