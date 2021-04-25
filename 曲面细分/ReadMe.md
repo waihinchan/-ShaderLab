@@ -19,3 +19,14 @@
 附效果图：
 
 ![https://github.com/waihinchan/Materialpractice/blob/main/%E6%9B%B2%E9%9D%A2%E7%BB%86%E5%88%86/%E6%9B%B2%E9%9D%A2%E7%BB%86%E5%88%86%20970f3853a0fe442d9bdcb3a8b8f5b7eb/%E6%95%88%E6%9E%9C%E5%9B%BE.png](https://github.com/waihinchan/Materialpractice/blob/main/%E6%9B%B2%E9%9D%A2%E7%BB%86%E5%88%86/%E6%9B%B2%E9%9D%A2%E7%BB%86%E5%88%86%20970f3853a0fe442d9bdcb3a8b8f5b7eb/%E6%95%88%E6%9E%9C%E5%9B%BE.png)
+
+
+4.25 更新：
+
+更新了一个可以用spltmap控制细分位置的版本，并且把部分重复的部分合并到一个文件中。displacement函数暂时没有合并，可以在shadowcaster和litforward单独控制（主要是把一些定义合并的话定义会更乱了。。暂时没有找到比较简洁的方法把这几个路径的定义合并在一起。。）
+
+TODO： 
+1.添加两层的法线、金属度、光泽度等（主要是贴图很难找就没动力去做了。。）
+2.更新细分曲面专用的shaderGUI，关键字的定义等
+3.添加对笔刷大小、形状、贴图和强度的支持
+4.再继续简化一些定义的问题
