@@ -8,7 +8,7 @@
 
 编辑器基于：
 
-[](https://www.patreon.com/posts/47447321)
+[Grass Geometry Shader with Interactivity (Part 2, the editor tool)](https://www.patreon.com/posts/grass-geometry-2-40077798)
 
 对比于原有的编辑器加入了用于泊松盘采样的方式来放置点，泊松盘采样的脚本附在里面了。仍然有一些小问题比如数组溢出之类的，目前通过简单的限制范围修复了。
 
