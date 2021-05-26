@@ -2,7 +2,7 @@
 
 尝试在URP中使用Kajiya-Kay方法渲染头发。参考了这一篇的做法：
 
-[](https://web.engr.oregonstate.edu/~mjb/cs519/Projects/Papers/HairRendering.pdf)
+[Hair Rendering and Shading](https://web.engr.oregonstate.edu/~mjb/cs519/Projects/Papers/HairRendering.pdf)
 
 他这里说的是用的Kajiya-Kay + Marschners model来做的。
 
