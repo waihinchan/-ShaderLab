@@ -39,3 +39,19 @@ TODO：
 [Male Hairstyle Short01 Low Poly Game Ready Model | CGTrader](https://www.cgtrader.com/items/2823018/download-page)
 
 切线贴图和噪声贴图网上随便找一下就有了，我是给切线贴图加了个模糊效果来做噪声的，经测试如果不做的话那个高光会更硬，所以猜测切线贴图本身也需要加入一些模糊或者噪声的效果。
+
+2021.5.27 更新：
+
+如果要使用SRP batcher的话，把以下属性
+
+float _primaryshift;
+float _secnodaryshift;
+float _exp1;
+float _exp2;
+float3 _SpecColor1;
+float3 _SpecColor2;
+
+
+放到Cbuffer即可，Cbuffer在litinput.hlsl.或者复制里面的内容然后自己重新自定义一下。
+
+
