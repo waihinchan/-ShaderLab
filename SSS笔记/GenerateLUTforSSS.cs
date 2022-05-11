@@ -8,7 +8,7 @@ public class GenerateLUTforSSS : ScriptableWizard
     public int height = 512;
     public float inc = 0.05f;
     public string filename = "SSS_LUT";
-    public bool halfPI = false;
+    private bool halfPI = false;
     [MenuItem ("Texture/SSS_LUT")]
     static void CreateWizard () {
         ScriptableWizard.DisplayWizard("Create the SSS lut texture",typeof(GenerateLUTforSSS),"Create");
@@ -52,13 +52,14 @@ public class GenerateLUTforSSS : ScriptableWizard
     }
     void OnWizardCreate () { //create stuff here
         
-        Texture2D SSS_LUT = new Texture2D(width, height, TextureFormat.ARGB32, false); 
+        Texture2D SSS_LUT = new Texture2D(width, height, TextureFormat.ARGB32, -1,true); 
         for (int i = 0; i < width; i++) //ndotl
         {
             for (int j = 0; j < height; j++) //r
             {
-                float x = Mathf.Lerp(-1, 1, i/(float) width); 
-                float y =   height/(j+0.0001f)  ; //这里曲率的取值范围问题还是有些疑惑，但是按照0-1的取值范围是对的。同事可以考虑一下是否用remap来映射0-1.
+                float x = Mathf.Lerp(-1, 1, i/(float) width);  
+                // float y =   height/(j+1.0f)  ; 
+                float y =     1 / Mathf.Lerp(0, 1, (j+1)/(float) height);  
 
                 Vector3 result  = GetDiffuse(x,y);
                 SSS_LUT.SetPixel(i, j, new Color(result.x,result.y,result.z,1f));
@@ -66,7 +67,9 @@ public class GenerateLUTforSSS : ScriptableWizard
         }
         SSS_LUT.Apply();
         byte[] bytes = SSS_LUT.EncodeToPNG(); 
-        File.WriteAllBytes(Application.dataPath + "/Editor/" + filename + ".png", bytes); 
+        File.WriteAllBytes(Application.dataPath  + '/' + filename + ".png", bytes); 
+        
+        AssetDatabase.Refresh();
         DestroyImmediate(SSS_LUT); 
         Debug.Log("succeed!");
         
