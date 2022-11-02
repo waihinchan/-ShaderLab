@@ -506,7 +506,7 @@ half4 PBRPreintegrateSkin(){
 
 视频参考如下：
 
-[](https://vimeo.com/711506556)
+https://vimeo.com/711506556
 
 ---
 
